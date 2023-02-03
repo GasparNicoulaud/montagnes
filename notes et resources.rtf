@@ -1,0 +1,285 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Verdana-Bold;\f4\fmodern\fcharset0 Courier-Bold;\f5\fnil\fcharset0 Monaco;
+\f6\fnil\fcharset0 Verdana;\f7\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red177\green0\blue0;\red73\green17\blue135;\red251\green251\blue251;
+\red26\green26\blue26;\red151\green0\blue192;\red0\green0\blue233;\red67\green67\blue67;\red140\green0\blue143;
+\red246\green246\blue246;\red255\green255\blue255;\red0\green0\blue0;\red211\green24\blue149;\red120\green109\blue255;
+\red65\green204\blue69;\red203\green35\blue57;\red244\green246\blue249;\red27\green31\blue34;\red91\green40\blue180;
+\red7\green68\blue184;\red75\green143\blue196;\red21\green27\blue29;\red171\green176\blue167;\red37\green127\blue159;
+\red246\green246\blue246;\red83\green83\blue83;\red198\green0\blue18;\red0\green0\blue255;\red250\green251\blue252;
+\red27\green29\blue31;\red235\green236\blue237;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c69589\c0\c0;\cssrgb\c36078\c14902\c60000;\cssrgb\c98824\c98824\c98824;
+\cssrgb\c13333\c13333\c13333;\cssrgb\c66667\c0\c80000;\cssrgb\c0\c13333\c93333;\cssrgb\c33333\c33333\c33333;\csgenericrgb\c54902\c0\c56078;
+\csgenericrgb\c96471\c96471\c96471;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0;\csgenericrgb\c82800\c9500\c58300;\csgenericrgb\c46900\c42600\c100000;
+\csgenericrgb\c25500\c80100\c27000;\cssrgb\c84314\c22745\c28627;\cssrgb\c96471\c97255\c98039;\cssrgb\c14118\c16078\c18039;\cssrgb\c43529\c25882\c75686;
+\cssrgb\c0\c36078\c77255;\cssrgb\c35686\c63137\c81176;\cssrgb\c10588\c14118\c14902;\cssrgb\c72549\c74118\c71373;\cssrgb\c16863\c56863\c68627;
+\cssrgb\c97255\c97255\c97255;\cssrgb\c40000\c40000\c40000;\cssrgb\c82745\c8235\c8235;\cssrgb\c0\c0\c100000;\cssrgb\c98431\c98824\c99216;
+\cssrgb\c14118\c15294\c16078;\cssrgb\c93725\c94118\c94510;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12600\viewh7800\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 dunes https://entagma.com/essential-td-skills-designing-implementing-algorithms/\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+
+\f1\b \cf0 TODOS MONTAGNES : \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+
+\fs48 \cf2 do \
+FIXME :\
+dans le shader dynamicmap/normalmap, la nouvelle technique de normal gen fait de snormales un peu moche, maybe mix entre les normales dans plusieurs directions\
+\
+-rework AO\
+-restructure ou les textures sont init dans basemapgen\
+-3 new types of materials, cf iphone notes\
+-batch caching\
+-pas charger de nouveau batch tant qu\'92on bouge la camera vite\
+-bloom post process : https://learnopengl.com/Advanced-Lighting/Bloom\
+-meilleurs craters, avec un bump positif + un bump n\'e9gatif plus \'e9troit mais plus profond\
+-horizontal warping\
+-make elongatedRocks tile\
+\
+resource weigert :\
+https://weigert.vsos.ethz.ch/2020/04/10/simple-particle-based-hydraulic-erosion/\
+\
+\
+un filtre qui donne (iterativement ?) a chaque point min(tout ses voisins) + slopeFactor, une sorte de pyramidize par la base. pour boucher les trous par exemple, MmM devient MMM.\
+\
+update ao computing using http://codeflow.org/entries/2011/nov/10/webgl-gpu-landscaping-and-erosion/#ambient-occlusion (https://github.com/pyalot/craftscape/blob/master/occlusion.shader)\
+\
+maybe ao at dynamicmap level also ?\
+\
+flowmap using precomputed normalmap,\
+then apply normal jitter at each frame when computing flowmap\
+\
+add mainshapes to erode : large crater, and several perlin based noises\
+\
+a plain terracing filter to try to put before erosion\
+\
+shadowmaps\
+\
+from bhm :\
+-materialMap (stone,rocks,sand,flow)\
+-each material as a texture (rgb + h + ao +roughness)\
+-geomtrymap (height,concavity,normalX,normalY)\
+-lightmap (global ao, dropshadow)\
+\
+dynamicmap should output :\
+-albdo & roughness(r,g,b,roughness)\
+-height & horizontal displacement & ao (H, hdX, hdY, ao)\
+from :\
+-materialMap (stone,rocks,sand,flow)\
+-each material as a texture (rgb + h + ao +roughness)\
+-geomtrymap (height,concavity,normalX,normalY)\
+-lightmap (global ao, dropshadow)\
+\
+dynamicNormalMap outuput:\
+-normalmap (x,y,z)\
+from :\
+-height & horizontal displacement & ao (H, hdX, hdY, ao)\
+\
+finalrender from :\
+-height & horizontal displacement & ao (H, hdX, hdY, ao)\
+-albdo & roughness(r,g,b,roughness)\
+-normalmap (x,y,z)\
+-lightmap (global ao, dropshadow)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+
+\fs24 \cf0 sum of normals : \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26\fsmilli13433 \cf3 \cb4 \expnd0\expndtw0\kerning0
+vec3\cf5  t = \cf3 texture\cf5 (baseMap,   uv).xyz * \cf3 vec3\cf5 ( \cf6 2.0\cf5 ,  \cf6 2.0\cf5 , \cf6 2.0\cf5 ) + \cf3 vec3\cf5 (\cf6 -1.0\cf5 , \cf6 -1.0\cf5 ,  \cf6 0.0\cf5 );\
+\cf3 vec3\cf5  u = \cf3 texture\cf5 (detailMap, uv).xyz * \cf3 vec3\cf5 (\cf6 -2.0\cf5 , \cf6 -2.0\cf5 , \cf6 2.0\cf5 ) + \cf3 vec3\cf5 ( \cf6 1.0\cf5 ,  \cf6 1.0\cf5 , \cf6 -1.0\cf5 );\
+\cf3 vec3\cf5  r = \cf3 normalize\cf5 (t * \cf3 dot\cf5 (t, u) - u * t.z);\
+\pard\pardeftab720\partightenfactor0
+\cf7 return\cf5  r;\
+\
+cheaper version :\
+\pard\pardeftab720\partightenfactor0
+\cf3 vec3\cf5  t = \cf3 texture\cf5 (baseMap,   uv).xyz * \cf6 2.0\cf5  - \cf6 1.0\cf5 ;\
+\cf3 vec3\cf5  u = \cf3 texture\cf5 (detailMap, uv).xyz * \cf6 2.0\cf5  - \cf6 1.0\cf5 ;\
+\cf3 vec3\cf5  r = \cf3 normalize\cf5 (t.xy + u.xy, t.z);\
+\pard\pardeftab720\partightenfactor0
+\cf7 return\cf5  r;\
+from https://google.github.io/filament/Filament.md.html at 
+\f3\b\fs32 \cf8 \cb1 5.7.1 Reoriented normal mapping
+\f1\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+\cf0 \
+- copier http://iquilezles.org/www/articles/morenoise/morenoise.htm\
+\
+- establish a unified mapgen process\
+\
+\
+-make hardnessmap good : random thickness, areas with thickness from 1meter to 500 meters for strata part, inside stratats different noise types billowy ? ridged ? multiridged ?\
+\
+\
+\
+FOR GEOMETRY, no liquid, clouds, vegetation, lighting or gameplay discussed:\
+controlfrom galaxymap to mapgen : planet atmosphere amount, size, material colors, macro accidentation(eg mountains or large hills)\
+\
+mapgen controls : global ground colors (maybe like 3?); craters frequency and size; how much erosion (always a minimum of it?); if ridges : how wide, how frequent, how high, same for canyons (inverse of ridges); advanced noise types (sand dunes waves for sandy material, perlin dunes, plateaus, giants cracks like dry mud); scattered rock noise frequency, size and shapes (streteched, flattened etc)\
+\
+mapgen decided by seed :\
+strata colors, zone colors, by material(sand, hard soil, rock)\
+\
+Great hash functions : https://nullprogram.com/blog/2018/07/31/\
+\
+\
+\
+int16 can hold 65k values so enough to represent terrain altitude at least for bhm with max height amplitude = 6.5 km and 0.1 m precision.\
+\
+Maybe we need dithering when generating it\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs28 \cf9 \cb10 \expnd0\expndtw0\kerning0
+GL_INVALID_ENUM      = 1280\
+GL_INVALID_VALUE     = 1281\
+GL_INVALID_OPERATION = 1282\
+\
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f2\b0\fs22 \cf11 \cb12 \kerning1\expnd0\expndtw0  \cf13 vec3\cf11 (\cf14 0.535\cf11 ,\cf14 0.800\cf11 ,\cf14 0.927\cf11 ), \cf15 // bluish atmosphere color
+\f4\b\fs28 \cf9 \cb10 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf9 \
+\
+http://algorithmicbotany.org/papers/runionsa.th2008.pdf \
+\
+https://github.com/dandrino/terrain-erosion-3-ways\
+\
+better gamma correction maybe ? 
+\f2\b0\fs27\fsmilli13600 \cf16 \cb17 float\cf18  \cf19 real_linear_to_srgb\cf18 (\cf16 float\cf18  f)\
+\{\
+    \cf16 if\cf18  (f <= \cf20 0\cf18 .\cf20 0031308f\cf18 )\
+        \cf16 return\cf18  f * \cf20 12\cf18 .\cf20 92f\cf18 ;\
+    \cf16 else\cf18 \
+        \cf16 return\cf18  \cf20 1\cf18 .\cf20 055f\cf18  * (\cf16 float\cf18 )\cf20 pow\cf18 (f, \cf20 1\cf18  / \cf20 2\cf18 .\cf20 4f\cf18 ) - \cf20 0\cf18 .\cf20 055f\cf18 ;\
+\}
+\f4\b\fs28 \cf9 \cb10 \
+\
+rng one liner : 
+\f5\b0\fs32 \AppleTypeServices\AppleTypeServicesF65538 \cf21 \cb22 float\cf0  \cf23 random (float2 input) \{ \cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf21 return\cf0  \cf23 frac(sin(dot(input, float2(12.9898,78.233)))* 43758.5453123);\cf0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf23 \}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \AppleTypeServices \cf24 \cb25 good rng 16uint ?\
+\
+uint\cf0  wang_hash\cf26 (\cf24 uint\cf0  seed\cf26 )\cf0 \
+\cf26 \{\cf0 \
+    seed \cf26 =\cf0  \cf26 (\cf0 seed \cf26 ^\cf0  \cf27 61\cf26 )\cf0  \cf26 ^\cf0  \cf26 (\cf0 seed \cf26 >>\cf0  \cf27 16\cf26 );\cf0 \
+    seed \cf26 *=\cf0  \cf27 9\cf26 ;\cf0 \
+    seed \cf26 =\cf0  seed \cf26 ^\cf0  \cf26 (\cf0 seed \cf26 >>\cf0  \cf27 4\cf26 );\cf0 \
+    seed \cf26 *=\cf0  \cf27 0x27d4eb2d\cf26 ;\cf0 \
+    seed \cf26 =\cf0  seed \cf26 ^\cf0  \cf26 (\cf0 seed \cf26 >>\cf0  \cf27 15\cf26 );\cf0 \
+    \cf28 return\cf0  seed\cf26 ;\cf0 \
+\cf26 \}\
+\
+combined with techniques from here : http://www.reedbeta.com/blog/quick-and-easy-gpu-random-numbers-in-d3d11/\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \AppleTypeServices\AppleTypeServicesF65538 \cf23 \cb22 \
+\
+good pbr shdaer : https://github.com/Nadrin/PBR/blob/master/data/shaders/glsl/pbr_fs.glsl\
+\
+shader instruction performances :\
+\pard\pardeftab720\partightenfactor0
+
+\f6\fs26 \AppleTypeServices \cf0 \cb29 For both Nvidia and AMD:\cb1 \
+\cb29 Add, Multiply, Subtract and MAD/FMA - 
+\f3\b 1
+\f6\b0 \cb1 \
+\
+\cb29 For AMD: \cb1 \
+\cb29 1/x, sin(x), cos(x), log2(x), exp2(x), 1/sqrt(x) - 
+\f3\b 4
+\f6\b0 \cb1 \
+\cb29 x/y - 
+\f3\b 5
+\f6\b0  (one reciprocal, one mul)\cb1 \
+\cb29 sqrt(x) - probably 
+\f3\b 5
+\f6\b0  (one reciprocal square root, one mul)\
+\
+\
+from http://www.fractalforums.com/programming/shader-function-or-instruction-cost-(performance)/\
+\
+more at http://developer.amd.com/wordpress/media/2013/12/AMD_OpenCL_Programming_Optimization_Guide2.pdf\
+\
+Star system single vs binary vs ternary star distribution\
+https://astronomy.stackexchange.com/questions/18604/multiple-star-system-percentages\
+\
+\
+bonne resource from star citizen https://www.substance3d.com/blog/star-citizen-texturing-sci-fi-open-world-game-substance\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf30 \cb31 texelFetch
+\f7\fs30 \cb32  is quite different from 
+\f2\fs26 \cb31 texture
+\f7\fs30 \cb32 .\cb1 \
+
+\f2\fs26 \cb31 texture
+\f7\fs30 \cb32  is your usual texture access function which handles filtering and normalized (
+\f2\fs26 \cb31 [0,1]
+\f7\fs30 \cb32 ) texture coordinates. 
+\f2\fs26 \cb31 texelFetch
+\f7\fs30 \cb32  directly accesses a texel in the texture (no filtering) using unnormalized coordinates (e.g. 
+\f2\fs26 \cb31 (64,64)
+\f7\fs30 \cb32  in the middle-ish texel in a 128x128 texture vs 
+\f2\fs26 \cb31 (.5,.5)
+\f7\fs30 \cb32  in normalized coordinates).\
+\
+\
+nice info about stars and galaxy :\
+https://beltoforion.de/article.php?a=spiral_galaxy_renderer\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf33 \cb1 \kerning1\expnd0\expndtw0 Resource montagnes :\
+\
+hex grid for better looking results ?\
+http://graphics.cs.brown.edu/games/IsoHeightfield/mcguiresibley04iso.pdf\
+simple and efficiant way to kill seams between batches\
+https://frictionalgames.blogspot.com/2010/11/tech-feature-terrain-geometry.html\
+\
+https://www.gdcvault.com/play/1026349/Advanced-Graphics-Techniques-Tutorial-Four\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 http://www.songho.ca/opengl/gl_sphere.html ICOSPHERE\
+\
+http://graphics.pixar.com/library/WaveletNoise/paper.pdf\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
+
+\f1\b \cf0 good looking erosion gpu iterative usage : https://www.youtube.com/watch?v=VE4bbDM5MV0\
+code : https://github.com/rigred/lithosphere-fork/blob/master/lithosphere/shaders/erode.frag\
+\
+\
+\
+https://www.shadertoy.com/view/MtGcWh !!!!! noise erosion single pass pixel shader !!!!!!!!!!!!!!\
+http://www.jerichardsonjr.info/Cratersat/index.html // so many data on craters\
+https://www.iquilezles.org/www/articles/fog/fog.htm /// great simple fog with sun\
+\
+http://iquilezles.org/www/articles/morenoise/morenoise.htm\
+\
+https://www.gamasutra.com/blogs/BranoKemen/20091112/85899/Horizontal_Fractal_Displacement.php\
+\
+http://www.outerra.com/procedural/demo.html\
+https://outerra.blogspot.com/2009/02/procedural-terrain-algorithm.html\
+http://www.outerra.com/procedural/demo2.html\
+\
+new noise supersimplex https://github.com/KdotJPG/New-Simplex-Style-Gradient-Noise/tree/master/glsl}

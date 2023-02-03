@@ -1,0 +1,17 @@
+
+
+todo list for total space
+
+lod
+complexer terrain
+water
+texture handling
+objects (plants, rocks, debris, props) placing
+ui
+pause menu
+main menu
+galaxy step
+dynamic shader genration
+lod based on distances from a sphere defined by the center and size of each terrain batch
+interpolation between LODs
+find actual analitical derivative of simplex noise in a shader and put it in frag to get the normal and do stuffs with that

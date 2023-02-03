@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB08494F2905B27A0099E5FC /* TalusCarve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB08494D2905B27A0099E5FC /* TalusCarve.cpp */; };
+		EB11005B2031184F00BC6E30 /* JakoErosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1100592031184F00BC6E30 /* JakoErosion.cpp */; };
+		EB1284AD1E053A3100AEB2AA /* UIhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1284AB1E053A3100AEB2AA /* UIhandler.cpp */; };
+		EB1287991E7C674800D4CA6E /* GalaxyGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB1287971E7C674800D4CA6E /* GalaxyGenerator.cpp */; };
+		EB20F52C20819E8500CA84B0 /* PostErosionFlowMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB20F52A20819E8500CA84B0 /* PostErosionFlowMap.cpp */; };
+		EB2779EC1E01ECF6006B702C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2779EB1E01ECF6006B702C /* OpenGL.framework */; };
+		EB2C426922828A34009109D1 /* BlurMaxSediment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB2C426722828A34009109D1 /* BlurMaxSediment.cpp */; };
+		EB2CF0BD1E03EBB100C25F6A /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB2CF0BB1E03EBB100C25F6A /* Camera.cpp */; };
+		EB305E99204F422E008215AF /* RidgeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB305E97204F422E008215AF /* RidgeMap.cpp */; };
+		EB38ACE5228286DF00E00905 /* GaspErosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9AFC3D20B78DC7008BD237 /* GaspErosion.cpp */; };
+		EB3C9F2A22B21EAD00422711 /* PerlinDisplace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3C9F2822B21EAD00422711 /* PerlinDisplace.cpp */; };
+		EB3C9F2D22B2294600422711 /* NormalAndConvexityMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3C9F2B22B2294600422711 /* NormalAndConvexityMap.cpp */; };
+		EB41A7E62941BE3800BCF57A /* Sedimentation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB41A7E42941BE3800BCF57A /* Sedimentation.cpp */; };
+		EB471101202FF4DC009F85F9 /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4710FF202FF4DC009F85F9 /* ShaderLoader.cpp */; };
+		EB55BCAB205EC67C00D3ABF6 /* updateMapVisRep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB55BCA9205EC67C00D3ABF6 /* updateMapVisRep.cpp */; };
+		EB55BCAE205EC6B100D3ABF6 /* drawMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB55BCAC205EC6B100D3ABF6 /* drawMap.cpp */; };
+		EB57B90D252FD5F200231844 /* GenShadowHeightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB57B90B252FD5F200231844 /* GenShadowHeightMap.cpp */; };
+		EB6CFFFF2598212E00AE1C75 /* CPUParticleErode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB6CFFFD2598212E00AE1C75 /* CPUParticleErode.cpp */; };
+		EB74938C2375C94F008F254D /* Craters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB74938A2375C94F008F254D /* Craters.cpp */; };
+		EB7D9EA823FDB3FD006D2BB2 /* GenMaterialTextures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7D9EA623FDB3FD006D2BB2 /* GenMaterialTextures.cpp */; };
+		EB7D9EAB23FDCCD6006D2BB2 /* ComputeGometryMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7D9EA923FDCCD6006D2BB2 /* ComputeGometryMap.cpp */; };
+		EB7D9EAE23FDCFB7006D2BB2 /* ComputeMaterialMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB7D9EAC23FDCFB7006D2BB2 /* ComputeMaterialMap.cpp */; };
+		EB8A26251EA5859E00F36EE7 /* Galaxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A26231EA5859E00F36EE7 /* Galaxy.cpp */; };
+		EB8A26281EA69E9200F36EE7 /* BaseHeightMapMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A26261EA69E9200F36EE7 /* BaseHeightMapMaker.cpp */; };
+		EB8DC6DC1E7E4DA000FD163F /* GalaxyViewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8DC6DA1E7E4DA000FD163F /* GalaxyViewer.cpp */; };
+		EBA86624298CC6A30058617C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2779EB1E01ECF6006B702C /* OpenGL.framework */; };
+		EBA86626298CC6BE0058617C /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA86625298CC6BE0058617C /* libglfw.3.3.dylib */; };
+		EBB27EB123D92A0A0045FC0A /* ComputeAOintoLightMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBB27EAF23D92A0A0045FC0A /* ComputeAOintoLightMap.cpp */; };
+		EBB27EB423D938DE0045FC0A /* CarveFlowMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBB27EB223D938DE0045FC0A /* CarveFlowMap.cpp */; };
+		EBB4E11925998EEC00685B76 /* GaspErodeV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBB4E11725998EEC00685B76 /* GaspErodeV2.cpp */; };
+		EBBC6083229DFED1008868F8 /* BoeschThermalErosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBC6081229DFED1008868F8 /* BoeschThermalErosion.cpp */; };
+		EBBC6086229DFF80008868F8 /* HardnessMapGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBC6084229DFF80008868F8 /* HardnessMapGen.cpp */; };
+		EBBE40ED1F68C00A00B5F648 /* BuildingGeometryGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBE40EB1F68C00A00B5F648 /* BuildingGeometryGenerator.cpp */; };
+		EBC170F91F69AC07005B3478 /* RecipeGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBC170F71F69AC07005B3478 /* RecipeGenerator.cpp */; };
+		EBCCB8B122B22F1400C3ED55 /* ClayJohnFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBCCB8AF22B22F1400C3ED55 /* ClayJohnFilter.cpp */; };
+		EBD136781DF223F800BFB575 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD136771DF223F800BFB575 /* main.cpp */; };
+		EBD136831DF227B900BFB575 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD136811DF227B900BFB575 /* GameObject.cpp */; };
+		EBD136861DF2283D00BFB575 /* Setup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD136841DF2283D00BFB575 /* Setup.cpp */; };
+		EBD136891DF22D0000BFB575 /* BattleMapMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD136871DF22D0000BFB575 /* BattleMapMaker.cpp */; };
+		EBD1368C1DF22D0E00BFB575 /* BattleMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD1368A1DF22D0E00BFB575 /* BattleMap.cpp */; };
+		EBD1CEC3252DF3390046DE82 /* TerraceFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD1CEC1252DF3390046DE82 /* TerraceFilter.cpp */; };
+		EBD7C38822AE05C600292ACF /* GenRidgeMapVertices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD7C38622AE05C600292ACF /* GenRidgeMapVertices.cpp */; };
+		EBD7C38B22AF305B00292ACF /* RidgeVertexToBHM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD7C38922AF305B00292ACF /* RidgeVertexToBHM.cpp */; };
+		EBD901F4292C5B830047DE19 /* DefferedRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBD901F2292C5B830047DE19 /* DefferedRender.cpp */; };
+		EBF42ECF290F2E4700987D3D /* WMErodeSpecial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBF42ECD290F2E4700987D3D /* WMErodeSpecial.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBD136721DF223F800BFB575 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB08494D2905B27A0099E5FC /* TalusCarve.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TalusCarve.cpp; sourceTree = "<group>"; };
+		EB08494E2905B27A0099E5FC /* TalusCarve.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TalusCarve.hpp; sourceTree = "<group>"; };
+		EB1100592031184F00BC6E30 /* JakoErosion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JakoErosion.cpp; sourceTree = "<group>"; };
+		EB11005A2031184F00BC6E30 /* JakoErosion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JakoErosion.hpp; sourceTree = "<group>"; };
+		EB1284AB1E053A3100AEB2AA /* UIhandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIhandler.cpp; sourceTree = "<group>"; };
+		EB1284AC1E053A3100AEB2AA /* UIhandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIhandler.hpp; sourceTree = "<group>"; };
+		EB1287971E7C674800D4CA6E /* GalaxyGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GalaxyGenerator.cpp; sourceTree = "<group>"; };
+		EB1287981E7C674800D4CA6E /* GalaxyGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GalaxyGenerator.hpp; sourceTree = "<group>"; };
+		EB20F52A20819E8500CA84B0 /* PostErosionFlowMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PostErosionFlowMap.cpp; sourceTree = "<group>"; };
+		EB20F52B20819E8500CA84B0 /* PostErosionFlowMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PostErosionFlowMap.hpp; sourceTree = "<group>"; };
+		EB222DD82029BFD2001EA13A /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		EB2779EB1E01ECF6006B702C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EB2779ED1E01F1E0006B702C /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		EB2C426722828A34009109D1 /* BlurMaxSediment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlurMaxSediment.cpp; sourceTree = "<group>"; };
+		EB2C426822828A34009109D1 /* BlurMaxSediment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlurMaxSediment.hpp; sourceTree = "<group>"; };
+		EB2CF0BB1E03EBB100C25F6A /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		EB2CF0BC1E03EBB100C25F6A /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		EB305E97204F422E008215AF /* RidgeMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RidgeMap.cpp; sourceTree = "<group>"; };
+		EB305E98204F422E008215AF /* RidgeMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RidgeMap.hpp; sourceTree = "<group>"; };
+		EB3C9F2822B21EAD00422711 /* PerlinDisplace.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PerlinDisplace.cpp; sourceTree = "<group>"; };
+		EB3C9F2922B21EAD00422711 /* PerlinDisplace.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PerlinDisplace.hpp; sourceTree = "<group>"; };
+		EB3C9F2B22B2294600422711 /* NormalAndConvexityMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NormalAndConvexityMap.cpp; sourceTree = "<group>"; };
+		EB3C9F2C22B2294600422711 /* NormalAndConvexityMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NormalAndConvexityMap.hpp; sourceTree = "<group>"; };
+		EB41A7E42941BE3800BCF57A /* Sedimentation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sedimentation.cpp; sourceTree = "<group>"; };
+		EB41A7E52941BE3800BCF57A /* Sedimentation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sedimentation.hpp; sourceTree = "<group>"; };
+		EB4710FF202FF4DC009F85F9 /* ShaderLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderLoader.cpp; sourceTree = "<group>"; };
+		EB471100202FF4DC009F85F9 /* ShaderLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderLoader.hpp; sourceTree = "<group>"; };
+		EB55BCA9205EC67C00D3ABF6 /* updateMapVisRep.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = updateMapVisRep.cpp; sourceTree = "<group>"; };
+		EB55BCAA205EC67C00D3ABF6 /* updateMapVisRep.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = updateMapVisRep.hpp; sourceTree = "<group>"; };
+		EB55BCAC205EC6B100D3ABF6 /* drawMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = drawMap.cpp; sourceTree = "<group>"; };
+		EB55BCAD205EC6B100D3ABF6 /* drawMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = drawMap.hpp; sourceTree = "<group>"; };
+		EB57B90B252FD5F200231844 /* GenShadowHeightMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GenShadowHeightMap.cpp; sourceTree = "<group>"; };
+		EB57B90C252FD5F200231844 /* GenShadowHeightMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GenShadowHeightMap.hpp; sourceTree = "<group>"; };
+		EB6CFFFD2598212E00AE1C75 /* CPUParticleErode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPUParticleErode.cpp; sourceTree = "<group>"; };
+		EB6CFFFE2598212E00AE1C75 /* CPUParticleErode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPUParticleErode.hpp; sourceTree = "<group>"; };
+		EB74938A2375C94F008F254D /* Craters.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Craters.cpp; sourceTree = "<group>"; };
+		EB74938B2375C94F008F254D /* Craters.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Craters.hpp; sourceTree = "<group>"; };
+		EB7D0F001F67681200C84350 /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
+		EB7D9EA623FDB3FD006D2BB2 /* GenMaterialTextures.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GenMaterialTextures.cpp; sourceTree = "<group>"; };
+		EB7D9EA723FDB3FD006D2BB2 /* GenMaterialTextures.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GenMaterialTextures.hpp; sourceTree = "<group>"; };
+		EB7D9EA923FDCCD6006D2BB2 /* ComputeGometryMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ComputeGometryMap.cpp; sourceTree = "<group>"; };
+		EB7D9EAA23FDCCD6006D2BB2 /* ComputeGometryMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComputeGometryMap.hpp; sourceTree = "<group>"; };
+		EB7D9EAC23FDCFB7006D2BB2 /* ComputeMaterialMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ComputeMaterialMap.cpp; sourceTree = "<group>"; };
+		EB7D9EAD23FDCFB7006D2BB2 /* ComputeMaterialMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComputeMaterialMap.hpp; sourceTree = "<group>"; };
+		EB8A26231EA5859E00F36EE7 /* Galaxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Galaxy.cpp; sourceTree = "<group>"; };
+		EB8A26241EA5859E00F36EE7 /* Galaxy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Galaxy.hpp; sourceTree = "<group>"; };
+		EB8A26261EA69E9200F36EE7 /* BaseHeightMapMaker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseHeightMapMaker.cpp; sourceTree = "<group>"; };
+		EB8A26271EA69E9200F36EE7 /* BaseHeightMapMaker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseHeightMapMaker.hpp; sourceTree = "<group>"; };
+		EB8C22981E04FA04004E1B33 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
+		EB8DC6DA1E7E4DA000FD163F /* GalaxyViewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GalaxyViewer.cpp; sourceTree = "<group>"; };
+		EB8DC6DB1E7E4DA000FD163F /* GalaxyViewer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GalaxyViewer.hpp; sourceTree = "<group>"; };
+		EB9AFC3D20B78DC7008BD237 /* GaspErosion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GaspErosion.cpp; sourceTree = "<group>"; };
+		EB9AFC3E20B78DC7008BD237 /* GaspErosion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaspErosion.hpp; sourceTree = "<group>"; };
+		EBA86625298CC6BE0058617C /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		EBAA454C298CBD6A009B174B /* libglfw.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.4.dylib; path = "../../../../usr/local/Cellar/glfw/HEAD-8f47059/lib/libglfw.3.4.dylib"; sourceTree = "<group>"; };
+		EBAA4551298CBDF3009B174B /* libfreeimage.3.18.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreeimage.3.18.0.dylib; path = ../../../../usr/local/Cellar/freeimage/3.18.0/lib/libfreeimage.3.18.0.dylib; sourceTree = "<group>"; };
+		EBAA4558298CC1D3009B174B /* libfreeimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreeimage.a; path = ../../../../usr/local/Cellar/freeimage/3.18.0/lib/libfreeimage.a; sourceTree = "<group>"; };
+		EBB27EAF23D92A0A0045FC0A /* ComputeAOintoLightMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ComputeAOintoLightMap.cpp; sourceTree = "<group>"; };
+		EBB27EB023D92A0A0045FC0A /* ComputeAOintoLightMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ComputeAOintoLightMap.hpp; sourceTree = "<group>"; };
+		EBB27EB223D938DE0045FC0A /* CarveFlowMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CarveFlowMap.cpp; sourceTree = "<group>"; };
+		EBB27EB323D938DE0045FC0A /* CarveFlowMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CarveFlowMap.hpp; sourceTree = "<group>"; };
+		EBB4E11725998EEC00685B76 /* GaspErodeV2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GaspErodeV2.cpp; sourceTree = "<group>"; };
+		EBB4E11825998EEC00685B76 /* GaspErodeV2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GaspErodeV2.hpp; sourceTree = "<group>"; };
+		EBBC6081229DFED1008868F8 /* BoeschThermalErosion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BoeschThermalErosion.cpp; sourceTree = "<group>"; };
+		EBBC6082229DFED1008868F8 /* BoeschThermalErosion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoeschThermalErosion.hpp; sourceTree = "<group>"; };
+		EBBC6084229DFF80008868F8 /* HardnessMapGen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HardnessMapGen.cpp; sourceTree = "<group>"; };
+		EBBC6085229DFF80008868F8 /* HardnessMapGen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HardnessMapGen.hpp; sourceTree = "<group>"; };
+		EBBE40EB1F68C00A00B5F648 /* BuildingGeometryGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildingGeometryGenerator.cpp; sourceTree = "<group>"; };
+		EBBE40EC1F68C00A00B5F648 /* BuildingGeometryGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BuildingGeometryGenerator.hpp; sourceTree = "<group>"; };
+		EBC170F71F69AC07005B3478 /* RecipeGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RecipeGenerator.cpp; sourceTree = "<group>"; };
+		EBC170F81F69AC07005B3478 /* RecipeGenerator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RecipeGenerator.hpp; sourceTree = "<group>"; };
+		EBCCB8AF22B22F1400C3ED55 /* ClayJohnFilter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClayJohnFilter.cpp; sourceTree = "<group>"; };
+		EBCCB8B022B22F1400C3ED55 /* ClayJohnFilter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClayJohnFilter.hpp; sourceTree = "<group>"; };
+		EBD136741DF223F800BFB575 /* TotalSpace */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TotalSpace; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD136771DF223F800BFB575 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EBD136811DF227B900BFB575 /* GameObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = GameObject.cpp; sourceTree = "<group>"; };
+		EBD136821DF227B900BFB575 /* GameObject.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = GameObject.hpp; sourceTree = "<group>"; };
+		EBD136841DF2283D00BFB575 /* Setup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Setup.cpp; sourceTree = "<group>"; };
+		EBD136851DF2283D00BFB575 /* Setup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Setup.hpp; sourceTree = "<group>"; };
+		EBD136871DF22D0000BFB575 /* BattleMapMaker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMapMaker.cpp; sourceTree = "<group>"; };
+		EBD136881DF22D0000BFB575 /* BattleMapMaker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleMapMaker.hpp; sourceTree = "<group>"; };
+		EBD1368A1DF22D0E00BFB575 /* BattleMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleMap.cpp; sourceTree = "<group>"; };
+		EBD1368B1DF22D0E00BFB575 /* BattleMap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BattleMap.hpp; sourceTree = "<group>"; };
+		EBD1CEC1252DF3390046DE82 /* TerraceFilter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TerraceFilter.cpp; sourceTree = "<group>"; };
+		EBD1CEC2252DF3390046DE82 /* TerraceFilter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TerraceFilter.hpp; sourceTree = "<group>"; };
+		EBD7C38622AE05C600292ACF /* GenRidgeMapVertices.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GenRidgeMapVertices.cpp; sourceTree = "<group>"; };
+		EBD7C38722AE05C600292ACF /* GenRidgeMapVertices.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GenRidgeMapVertices.hpp; sourceTree = "<group>"; };
+		EBD7C38922AF305B00292ACF /* RidgeVertexToBHM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RidgeVertexToBHM.cpp; sourceTree = "<group>"; };
+		EBD7C38A22AF305B00292ACF /* RidgeVertexToBHM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RidgeVertexToBHM.hpp; sourceTree = "<group>"; };
+		EBD901F2292C5B830047DE19 /* DefferedRender.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DefferedRender.cpp; sourceTree = "<group>"; };
+		EBD901F3292C5B830047DE19 /* DefferedRender.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DefferedRender.hpp; sourceTree = "<group>"; };
+		EBE50EC720718648006DF9D4 /* libglfw.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.0.dylib; path = ../../libglfw.3.0.dylib; sourceTree = "<group>"; };
+		EBE50EC9207186C7006DF9D4 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "../../Downloads/glfw-3.2.1/src/libglfw3.a"; sourceTree = "<group>"; };
+		EBED592C1E061937001DD5EE /* todo-list.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "todo-list.txt"; sourceTree = SOURCE_ROOT; };
+		EBF42ECD290F2E4700987D3D /* WMErodeSpecial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WMErodeSpecial.cpp; sourceTree = "<group>"; };
+		EBF42ECE290F2E4700987D3D /* WMErodeSpecial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WMErodeSpecial.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBD136711DF223F800BFB575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBA86626298CC6BE0058617C /* libglfw.3.3.dylib in Frameworks */,
+				EB2779EC1E01ECF6006B702C /* OpenGL.framework in Frameworks */,
+				EBA86624298CC6A30058617C /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB2779EA1E01ECF6006B702C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBA86625298CC6BE0058617C /* libglfw.3.3.dylib */,
+				EBAA4558298CC1D3009B174B /* libfreeimage.a */,
+				EBAA4551298CBDF3009B174B /* libfreeimage.3.18.0.dylib */,
+				EBAA454C298CBD6A009B174B /* libglfw.3.4.dylib */,
+				EBE50EC9207186C7006DF9D4 /* libglfw3.a */,
+				EBE50EC720718648006DF9D4 /* libglfw.3.0.dylib */,
+				EB222DD82029BFD2001EA13A /* libglfw.3.2.dylib */,
+				EB2779ED1E01F1E0006B702C /* libglfw.3.2.dylib */,
+				EB2779EB1E01ECF6006B702C /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB2C426B22828ACC009109D1 /* BaseMapGen */ = {
+			isa = PBXGroup;
+			children = (
+				EB8A26261EA69E9200F36EE7 /* BaseHeightMapMaker.cpp */,
+				EB8A26271EA69E9200F36EE7 /* BaseHeightMapMaker.hpp */,
+				EB08494D2905B27A0099E5FC /* TalusCarve.cpp */,
+				EB08494E2905B27A0099E5FC /* TalusCarve.hpp */,
+				EBB4E11725998EEC00685B76 /* GaspErodeV2.cpp */,
+				EBB4E11825998EEC00685B76 /* GaspErodeV2.hpp */,
+				EB41A7E42941BE3800BCF57A /* Sedimentation.cpp */,
+				EB41A7E52941BE3800BCF57A /* Sedimentation.hpp */,
+				EB6CFFFD2598212E00AE1C75 /* CPUParticleErode.cpp */,
+				EB6CFFFE2598212E00AE1C75 /* CPUParticleErode.hpp */,
+				EBF42ECD290F2E4700987D3D /* WMErodeSpecial.cpp */,
+				EBF42ECE290F2E4700987D3D /* WMErodeSpecial.hpp */,
+				EB7D9EAC23FDCFB7006D2BB2 /* ComputeMaterialMap.cpp */,
+				EB7D9EAD23FDCFB7006D2BB2 /* ComputeMaterialMap.hpp */,
+				EBD1CEC1252DF3390046DE82 /* TerraceFilter.cpp */,
+				EBD1CEC2252DF3390046DE82 /* TerraceFilter.hpp */,
+				EB7D9EA923FDCCD6006D2BB2 /* ComputeGometryMap.cpp */,
+				EB7D9EAA23FDCCD6006D2BB2 /* ComputeGometryMap.hpp */,
+				EB7D9EA623FDB3FD006D2BB2 /* GenMaterialTextures.cpp */,
+				EB7D9EA723FDB3FD006D2BB2 /* GenMaterialTextures.hpp */,
+				EBB27EB223D938DE0045FC0A /* CarveFlowMap.cpp */,
+				EBB27EB323D938DE0045FC0A /* CarveFlowMap.hpp */,
+				EBB27EAF23D92A0A0045FC0A /* ComputeAOintoLightMap.cpp */,
+				EBB27EB023D92A0A0045FC0A /* ComputeAOintoLightMap.hpp */,
+				EBD7C38622AE05C600292ACF /* GenRidgeMapVertices.cpp */,
+				EBD7C38722AE05C600292ACF /* GenRidgeMapVertices.hpp */,
+				EBD7C38922AF305B00292ACF /* RidgeVertexToBHM.cpp */,
+				EBD7C38A22AF305B00292ACF /* RidgeVertexToBHM.hpp */,
+				EB305E97204F422E008215AF /* RidgeMap.cpp */,
+				EB305E98204F422E008215AF /* RidgeMap.hpp */,
+				EB3C9F2822B21EAD00422711 /* PerlinDisplace.cpp */,
+				EB3C9F2922B21EAD00422711 /* PerlinDisplace.hpp */,
+				EB3C9F2B22B2294600422711 /* NormalAndConvexityMap.cpp */,
+				EB3C9F2C22B2294600422711 /* NormalAndConvexityMap.hpp */,
+				EBCCB8AF22B22F1400C3ED55 /* ClayJohnFilter.cpp */,
+				EBCCB8B022B22F1400C3ED55 /* ClayJohnFilter.hpp */,
+				EBBC6084229DFF80008868F8 /* HardnessMapGen.cpp */,
+				EBBC6085229DFF80008868F8 /* HardnessMapGen.hpp */,
+				EBBC6081229DFED1008868F8 /* BoeschThermalErosion.cpp */,
+				EBBC6082229DFED1008868F8 /* BoeschThermalErosion.hpp */,
+				EB1100592031184F00BC6E30 /* JakoErosion.cpp */,
+				EB11005A2031184F00BC6E30 /* JakoErosion.hpp */,
+				EB74938A2375C94F008F254D /* Craters.cpp */,
+				EB74938B2375C94F008F254D /* Craters.hpp */,
+				EB9AFC3D20B78DC7008BD237 /* GaspErosion.cpp */,
+				EB9AFC3E20B78DC7008BD237 /* GaspErosion.hpp */,
+				EB2C426722828A34009109D1 /* BlurMaxSediment.cpp */,
+				EB2C426822828A34009109D1 /* BlurMaxSediment.hpp */,
+				EB20F52A20819E8500CA84B0 /* PostErosionFlowMap.cpp */,
+				EB20F52B20819E8500CA84B0 /* PostErosionFlowMap.hpp */,
+				EB57B90B252FD5F200231844 /* GenShadowHeightMap.cpp */,
+				EB57B90C252FD5F200231844 /* GenShadowHeightMap.hpp */,
+			);
+			path = BaseMapGen;
+			sourceTree = "<group>";
+		};
+		EB4F275E2298721500696EFA /* Galaxy */ = {
+			isa = PBXGroup;
+			children = (
+				EB8A26231EA5859E00F36EE7 /* Galaxy.cpp */,
+				EB8A26241EA5859E00F36EE7 /* Galaxy.hpp */,
+				EB1287971E7C674800D4CA6E /* GalaxyGenerator.cpp */,
+				EB1287981E7C674800D4CA6E /* GalaxyGenerator.hpp */,
+				EB8DC6DA1E7E4DA000FD163F /* GalaxyViewer.cpp */,
+				EB8DC6DB1E7E4DA000FD163F /* GalaxyViewer.hpp */,
+			);
+			path = Galaxy;
+			sourceTree = "<group>";
+		};
+		EB4F2760229872F700696EFA /* BattleMap */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1368A1DF22D0E00BFB575 /* BattleMap.cpp */,
+				EBD1368B1DF22D0E00BFB575 /* BattleMap.hpp */,
+				EBD136871DF22D0000BFB575 /* BattleMapMaker.cpp */,
+				EBD136881DF22D0000BFB575 /* BattleMapMaker.hpp */,
+				EBD901F2292C5B830047DE19 /* DefferedRender.cpp */,
+				EBD901F3292C5B830047DE19 /* DefferedRender.hpp */,
+				EB55BCAC205EC6B100D3ABF6 /* drawMap.cpp */,
+				EB55BCAD205EC6B100D3ABF6 /* drawMap.hpp */,
+				EB55BCA9205EC67C00D3ABF6 /* updateMapVisRep.cpp */,
+				EB55BCAA205EC67C00D3ABF6 /* updateMapVisRep.hpp */,
+			);
+			path = BattleMap;
+			sourceTree = "<group>";
+		};
+		EBD1366B1DF223F800BFB575 = {
+			isa = PBXGroup;
+			children = (
+				EB7D0F001F67681200C84350 /* maps */,
+				EBD136761DF223F800BFB575 /* TotalSpace */,
+				EB8C22981E04FA04004E1B33 /* Shaders */,
+				EB2779EA1E01ECF6006B702C /* Frameworks */,
+				EBD136751DF223F800BFB575 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBD136751DF223F800BFB575 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBD136741DF223F800BFB575 /* TotalSpace */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBD136761DF223F800BFB575 /* TotalSpace */ = {
+			isa = PBXGroup;
+			children = (
+				EBD136771DF223F800BFB575 /* main.cpp */,
+				EB4F2760229872F700696EFA /* BattleMap */,
+				EB1284AB1E053A3100AEB2AA /* UIhandler.cpp */,
+				EB1284AC1E053A3100AEB2AA /* UIhandler.hpp */,
+				EBD136811DF227B900BFB575 /* GameObject.cpp */,
+				EBD136821DF227B900BFB575 /* GameObject.hpp */,
+				EB4F275E2298721500696EFA /* Galaxy */,
+				EBD136841DF2283D00BFB575 /* Setup.cpp */,
+				EBD136851DF2283D00BFB575 /* Setup.hpp */,
+				EBC170F71F69AC07005B3478 /* RecipeGenerator.cpp */,
+				EBC170F81F69AC07005B3478 /* RecipeGenerator.hpp */,
+				EBBE40EB1F68C00A00B5F648 /* BuildingGeometryGenerator.cpp */,
+				EBBE40EC1F68C00A00B5F648 /* BuildingGeometryGenerator.hpp */,
+				EB4710FF202FF4DC009F85F9 /* ShaderLoader.cpp */,
+				EB471100202FF4DC009F85F9 /* ShaderLoader.hpp */,
+				EB2CF0BB1E03EBB100C25F6A /* Camera.cpp */,
+				EB2CF0BC1E03EBB100C25F6A /* Camera.hpp */,
+				EB2C426B22828ACC009109D1 /* BaseMapGen */,
+				EBED592C1E061937001DD5EE /* todo-list.txt */,
+			);
+			path = TotalSpace;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBD136731DF223F800BFB575 /* TotalSpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD1367B1DF223F800BFB575 /* Build configuration list for PBXNativeTarget "TotalSpace" */;
+			buildPhases = (
+				EBD136701DF223F800BFB575 /* Sources */,
+				EBD136711DF223F800BFB575 /* Frameworks */,
+				EBD136721DF223F800BFB575 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TotalSpace;
+			productName = TotalSpace;
+			productReference = EBD136741DF223F800BFB575 /* TotalSpace */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBD1366C1DF223F800BFB575 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1420;
+				ORGANIZATIONNAME = "Gaspar Nicoulaud";
+				TargetAttributes = {
+					EBD136731DF223F800BFB575 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EBD1366F1DF223F800BFB575 /* Build configuration list for PBXProject "TotalSpace" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBD1366B1DF223F800BFB575;
+			productRefGroup = EBD136751DF223F800BFB575 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBD136731DF223F800BFB575 /* TotalSpace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBD136701DF223F800BFB575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB4E11925998EEC00685B76 /* GaspErodeV2.cpp in Sources */,
+				EB6CFFFF2598212E00AE1C75 /* CPUParticleErode.cpp in Sources */,
+				EBD7C38822AE05C600292ACF /* GenRidgeMapVertices.cpp in Sources */,
+				EB1287991E7C674800D4CA6E /* GalaxyGenerator.cpp in Sources */,
+				EB8A26281EA69E9200F36EE7 /* BaseHeightMapMaker.cpp in Sources */,
+				EB7D9EAB23FDCCD6006D2BB2 /* ComputeGometryMap.cpp in Sources */,
+				EB55BCAE205EC6B100D3ABF6 /* drawMap.cpp in Sources */,
+				EBBC6083229DFED1008868F8 /* BoeschThermalErosion.cpp in Sources */,
+				EB2C426922828A34009109D1 /* BlurMaxSediment.cpp in Sources */,
+				EBC170F91F69AC07005B3478 /* RecipeGenerator.cpp in Sources */,
+				EB11005B2031184F00BC6E30 /* JakoErosion.cpp in Sources */,
+				EBD1368C1DF22D0E00BFB575 /* BattleMap.cpp in Sources */,
+				EB41A7E62941BE3800BCF57A /* Sedimentation.cpp in Sources */,
+				EBCCB8B122B22F1400C3ED55 /* ClayJohnFilter.cpp in Sources */,
+				EB8A26251EA5859E00F36EE7 /* Galaxy.cpp in Sources */,
+				EB3C9F2A22B21EAD00422711 /* PerlinDisplace.cpp in Sources */,
+				EB7D9EAE23FDCFB7006D2BB2 /* ComputeMaterialMap.cpp in Sources */,
+				EB08494F2905B27A0099E5FC /* TalusCarve.cpp in Sources */,
+				EB55BCAB205EC67C00D3ABF6 /* updateMapVisRep.cpp in Sources */,
+				EBD136891DF22D0000BFB575 /* BattleMapMaker.cpp in Sources */,
+				EB1284AD1E053A3100AEB2AA /* UIhandler.cpp in Sources */,
+				EB38ACE5228286DF00E00905 /* GaspErosion.cpp in Sources */,
+				EBD901F4292C5B830047DE19 /* DefferedRender.cpp in Sources */,
+				EB3C9F2D22B2294600422711 /* NormalAndConvexityMap.cpp in Sources */,
+				EB2CF0BD1E03EBB100C25F6A /* Camera.cpp in Sources */,
+				EBD1CEC3252DF3390046DE82 /* TerraceFilter.cpp in Sources */,
+				EBD136781DF223F800BFB575 /* main.cpp in Sources */,
+				EB471101202FF4DC009F85F9 /* ShaderLoader.cpp in Sources */,
+				EB8DC6DC1E7E4DA000FD163F /* GalaxyViewer.cpp in Sources */,
+				EB7D9EA823FDB3FD006D2BB2 /* GenMaterialTextures.cpp in Sources */,
+				EBB27EB423D938DE0045FC0A /* CarveFlowMap.cpp in Sources */,
+				EB57B90D252FD5F200231844 /* GenShadowHeightMap.cpp in Sources */,
+				EB305E99204F422E008215AF /* RidgeMap.cpp in Sources */,
+				EBD7C38B22AF305B00292ACF /* RidgeVertexToBHM.cpp in Sources */,
+				EB74938C2375C94F008F254D /* Craters.cpp in Sources */,
+				EBD136831DF227B900BFB575 /* GameObject.cpp in Sources */,
+				EBD136861DF2283D00BFB575 /* Setup.cpp in Sources */,
+				EB20F52C20819E8500CA84B0 /* PostErosionFlowMap.cpp in Sources */,
+				EBBE40ED1F68C00A00B5F648 /* BuildingGeometryGenerator.cpp in Sources */,
+				EBBC6086229DFF80008868F8 /* HardnessMapGen.cpp in Sources */,
+				EBB27EB123D92A0A0045FC0A /* ComputeAOintoLightMap.cpp in Sources */,
+				EBF42ECF290F2E4700987D3D /* WMErodeSpecial.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EBD136791DF223F800BFB575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_FAST_MATH = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				"MACOSX_DEPLOYMENT_TARGET[arch=arm64e]" = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lfreeimage";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EBD1367A1DF223F800BFB575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_X86_VECTOR_INSTRUCTIONS = default;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_FAST_MATH = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				"MACOSX_DEPLOYMENT_TARGET[arch=arm64e]" = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lfreeimage";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EBD1367C1DF223F800BFB575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/opt/local/include,
+					/opt/homebrew/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"/usr/local/Cellar/glfw/HEAD-8f47059/lib",
+					/usr/local/Cellar/freeimage/3.18.0/lib,
+					/opt/homebrew/lib,
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EBD1367D1DF223F800BFB575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "-";
+				DEAD_CODE_STRIPPING = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/opt/local/include,
+					/opt/homebrew/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					"/usr/local/Cellar/glfw/HEAD-8f47059/lib",
+					/usr/local/Cellar/freeimage/3.18.0/lib,
+					/opt/homebrew/lib,
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBD1366F1DF223F800BFB575 /* Build configuration list for PBXProject "TotalSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD136791DF223F800BFB575 /* Debug */,
+				EBD1367A1DF223F800BFB575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBD1367B1DF223F800BFB575 /* Build configuration list for PBXNativeTarget "TotalSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD1367C1DF223F800BFB575 /* Debug */,
+				EBD1367D1DF223F800BFB575 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBD1366C1DF223F800BFB575 /* Project object */;
+}
