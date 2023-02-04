@@ -8,7 +8,6 @@ const vec3 sunColor = vec3(1.3,1.1,0.85) * 10;
 const vec3 ambientIrradiance = vec3(0.585,0.650,0.987) * 0.3 * 1.3; // sky light
 const vec3 abmientLightFactor = vec3(1,1,1) * 0.02; //true ambient light
 const float fogIntensity = 0.08; //0.15 actually i think this controlls fog height
-//const vec3 ambientIrradiance = vec3(1,1,1) * 0.1;
 
 //bluish fog color vec3(0.535,0.650,0.927)
 //bluer fog color vec3(0.585,0.650,0.987)
@@ -40,11 +39,6 @@ pour le vtx shader
 
 */
 
-//// in from vertex shader
-//in vec3 position;
-//in vec2 fixedSamplingCoord;
-//in vec2 uvForStaticmapSampling;
-//
 // output
 out vec4 out_Color;
 
@@ -199,6 +193,64 @@ vec3 applyFog(in vec3   rgb,      // original color of the pixel
     return mix( rgb, fogColor, fogAmount );
 }
 
+// compute the near and far intersections of the cube (stored in the x and y components) using the slab method
+// no intersection means vec.x > vec.y (really tNear > tFar)
+vec2 intersectAABB(vec3 rayOrigin, vec3 rayDir) {
+    vec3 boxMin = vec3(-5000,-5000,-500);
+    vec3 boxMax = vec3( 5000, 5000,1500);
+    vec3 tMin = (boxMin - rayOrigin) / rayDir;
+    vec3 tMax = (boxMax - rayOrigin) / rayDir;
+    vec3 t1 = min(tMin, tMax);
+    vec3 t2 = max(tMin, tMax);
+    float tNear = max(max(t1.x, t1.y), t1.z);
+    float tFar = min(min(t2.x, t2.y), t2.z);
+    return vec2(tNear, tFar);
+}
+
+vec3 applyFogVolumetric(in vec3   rgb,      // original color of the pixel
+                        in float  pointdistance, // camera to point distance
+                        in vec3   rayDir,   // camera to point vector
+                        in vec3   camPos, // camera position
+                        in vec3   sunDir )  // sun light direction
+{
+    vec3 finalColor = rgb;
+
+    vec2 intersections = intersectAABB(camPos,rayDir);
+    float nearDistance = max(0,intersections.x);
+    float farDistance = min(pointdistance,intersections.y);
+    
+    if(pointdistance > intersections.y){
+        finalColor = applyFog(rgb,pointdistance,rayDir,camPos,sunDir);
+    }
+    
+    if(nearDistance > farDistance){
+      return applyFog(rgb,pointdistance,rayDir,camPos,sunDir);
+    }
+    
+    vec3 nearPoint = camPos + rayDir * nearDistance;
+    vec3 farPoint = camPos + rayDir * farDistance;
+    
+    #define STEP_COUNT 32.0
+    
+    float stepSize = (farDistance - nearDistance) / STEP_COUNT;
+    
+    for(int i=0; i< STEP_COUNT ; i++){
+        vec3 curPoint = mix(nearPoint,farPoint,1.0 - i/ STEP_COUNT );
+        float shadowHeight = texture2D_bicubic(globalLightMap,(curPoint.xy + vec2(5000.0))/10000.0).g;
+//        float lightFactor = clamp((curPoint.z - (shadowHeight * 500 + 90)),0,1);
+        float lightFactor = clamp((curPoint.z - (shadowHeight * 500 + 50)) * 0.05,0,1);
+        vec3 fogColor = mix(atmosphereColor * 0.1,atmosphereColor,lightFactor);
+        float density = exp(curPoint.z * -0.004) * 0.0015;
+        
+        //density = mix(0.1,0.00001,lightFactor);
+        
+        finalColor = mix(finalColor,fogColor, min(stepSize * density,1.0));
+    }
+
+    return finalColor;
+//    return mix(finalColor, vec3(1,0,0), min(0.05 + (farDistance - nearDistance) * 0.0001,1.0));
+}
+
 void main(void)
 {
     vec2 screenSize = vec2(3456,2234);
@@ -206,12 +258,12 @@ void main(void)
     vec4 albedoRoughness = texture(albedoRoughnessSampler,gl_FragCoord.xy/screenSize).rgba;
     vec3 normal = texture(normalSampler,gl_FragCoord.xy/screenSize).xyz;
     
-    float dropShadowFactor = texture2D_bicubic(globalLightMap,(position.xy + vec2(5000.0))/10000.0).g;
-    
+    float shadowHeight = texture2D_bicubic(globalLightMap,(position.xy + vec2(5000.0))/10000.0).g;
+//    float dropShadowFactor = texture2D_bicubic(globalLightMap,(position.xy + vec2(5000.0))/10000.0).g;
+    float dropShadowFactor = clamp((position.z - (shadowHeight * 500 + 50)) * 0.05,0,1);
+
     vec3 albedo = albedoRoughness.rgb;
     float roughness = albedoRoughness.a;
-    
-    //vec3 PBRcolor = normal;
 
     // Outgoing light direction (vector from world-space fragment position to the "eye").
     vec3 Lo = normalize(campos - position);
@@ -259,56 +311,12 @@ void main(void)
 
 
     // fog
-    PBRcolor = applyFog(PBRcolor,length(position - campos),normalize(position - campos),campos,sunlightDirection);
-//
-//    out_Color.rgb *= 2.0; //exposure
-//
-//
-//    //out_Color.rgb = albedo;
-//    //contrast
-////    out_Color.rgb = ((out_Color.rgb - 0.3f) * 1.05f) + 0.3f;
-//
-//
+    //PBRcolor = applyFog(PBRcolor,length(position - campos),normalize(position - campos),campos,sunlightDirection);
+    PBRcolor = applyFogVolumetric(PBRcolor,length(position - campos),normalize(position - campos),campos,sunlightDirection);
+
     //hdr tone mapping
     out_Color.rgb = PBRcolor / (PBRcolor + vec3(1.0));
     out_Color.a = 1.0;
-//    // tone mapping
-//    //out_Color.rgb = vec3(1.0) - exp(-out_Color.rgb * 2.0);
-//
-//    //color inversion
-//    //out_Color.rgb = vec3(0.5) - out_Color.rgb;
-//
-//    //gamma correction
-//    //out_Color.rgb = pow(out_Color.rgb,vec3(1.0/2.2)); //not needed, done by opengl through   glEnable(GL_FRAMEBUFFER_SRGB);
-//
-//
-//    /*if(texture(matexture,origVertex.xy).g > 0.0001)
-//     {
-//     out_Color.g = 1;
-//     }
-//     else
-//     {
-//     out_Color.g = 0;
-//     }*/
-//
-//    //float gridSize = 488.28125;
-//    // red grid gridSize x gridSize meter grid
-//    //if(abs(mod(pos.x,gridSize)) < gridSize*0.1)out_Color.r += 0.8;
-//    //if(abs(mod(pos.y,gridSize)) < gridSize*0.1)out_Color.r += 0.8;
-//    /*
-//    if(abs(pos.x) > 2000 || abs(pos.y) > 2000 ) out_Color.r = 0.8; // unplayable area
-//    if(abs(pos.x) < 1000 && abs(pos.y) < 1000 ) out_Color.g = 0.8;
-//    if(abs(pos.x) < 500 && abs(pos.y) < 500 ) out_Color.g = 1; // area of defense
-//     */
-//
-//    /*
-//    if(length(normal + normalize(posMinusCampos)) < 0.1f)
-//    {
-//        out_Color.r = 1.0;
-//        out_Color.g = 0.0;
-//        out_Color.b = 0.0;
-//    }
-//    */
 }
 
 

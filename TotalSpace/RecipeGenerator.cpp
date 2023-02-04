@@ -12,6 +12,10 @@ float randFloatZeroToOne(){
     return (rand() % 10000) / 10000.0f;
 }
 
+MaterialShaders randomMaterialFrom(MaterialShaders choices[]){
+    return choices[rand() % sizeof(choices) / sizeof(choices[0])];
+}
+
 Recipe genRecipe()
 {
     Recipe recipe;
@@ -192,7 +196,8 @@ Recipe genRecipe()
     int numOfPossibleMaterials = 12;
     
     recipe.stoneRecipe.seed = rand() % 1000000;
-    recipe.stoneRecipe.materialShader = (MaterialShaders)(rand() % numOfPossibleMaterials);
+    recipe.stoneRecipe.materialShader = randomMaterialFrom((MaterialShaders[]){CLIFFFACE, SMOOTHSTONE, POKEDVORONOI, ROUGHROCK});
+//    recipe.stoneRecipe.materialShader = (MaterialShaders)(rand() % numOfPossibleMaterials);
 //    recipe.stoneRecipe.materialShader = ROUGHROCK;
     
     recipe.rocksRecipe.seed = rand() % 1000000;
@@ -200,7 +205,7 @@ Recipe genRecipe()
 //    recipe.rocksRecipe.materialShader = ROUGHROCK;
     
     recipe.sandRecipe.seed = rand() % 1000000;
-    recipe.sandRecipe.materialShader = (MaterialShaders)(rand() % numOfPossibleMaterials);
+    recipe.sandRecipe.materialShader = randomMaterialFrom((MaterialShaders[]){JAGGEDROCKS, VORONOIROCKFIELD, WHITESNOW, DIRTANDPEBBLES, FINEGRAVEL});
 //    recipe.sandRecipe.materialShader = ROUGHROCK;
     
     recipe.flowRecipe.seed = rand() % 1000000;
@@ -224,6 +229,7 @@ Recipe genRecipe()
     recipe.sunPosX = randFloatZeroToOne() * 2 - 1.0;
     recipe.sunPosY = randFloatZeroToOne() * 2 - 1.0;
     recipe.sunPosZ = 0.1 + randFloatZeroToOne() * 0.3; //make sun never too close to zenith
+    //recipe.sunPosZ = 0;
     
     //recipe.sunPosZ = 0.8;
     

@@ -105,7 +105,7 @@ void genBHMGPU(int bmhRes, Recipe recipe, BattleMap* battleMap)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); //GL_CLAMP_TO_EDGE | GL_REPEAT | GL_CLAMP_TO_BORDER
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RG8, bmhRes, bmhRes, 0, GL_RG, GL_BYTE, NULL);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RG16F, bmhRes, bmhRes, 0, GL_RG, GL_HALF_FLOAT, NULL);
     
     //if(glIsFramebuffer(fboID) == GL_TRUE) //error checking, check that fboID isnt already a framebuffer
     //    glDeleteFramebuffers(1, &fboID);

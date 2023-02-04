@@ -11,11 +11,13 @@ void main(void)
     vec2 samplingCoord = gl_FragCoord.xy * invTextureSize;
     float shadowHeight = texture(shadowHeightMap,samplingCoord).r - texture(heightMap,samplingCoord).r;
     
-    shadowHeight = clamp(shadowHeight,0.0,0.005);
-    shadowHeight *= 200.0;
+//    shadowHeight = clamp(shadowHeight,0.0,0.005);
+//    shadowHeight *= 200.0;
+//
+//    shadowHeight = 1.0 - shadowHeight; //transform to allow simple mutltipication in the rendering pass
+//
+//    lightMap = vec4(shadowHeight);
     
-    shadowHeight = 1.0 - shadowHeight; //transform to allow simple mutltipication in the rendering pass
-        
-    lightMap = vec4(shadowHeight);
+    lightMap = vec4(texture(shadowHeightMap,samplingCoord).r);
 }
 
